@@ -1,0 +1,109 @@
+page {
+    padding: 0;
+    margin: 0;
+    background: #fffff5;
+}
+
+.container {
+    width: 700rpx;
+    margin-left: 25rpx;
+    margin-right: 25rpx;
+    position: absolute;
+    color: #6a6b71;
+}
+
+/* 头像 */
+
+.avata {
+    /* 居中 */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    width: 161rpx;
+    height: 161rpx;
+    border-radius: 50%;
+}
+
+/* 昵称 */
+
+.nickName {
+    font-size: 32rpx;
+    display: flex;
+    justify-content: center;
+    margin-top: 20rpx;
+}
+
+/* 签到、活跃度、成就 */
+
+.table-box {
+    margin: 40rpx 25rpx;
+    width: 650rpx;
+    display: flex;
+    font-size: 32rpx;
+    align-items: center;
+}
+
+.box {
+    text-align: center;
+    width: calc(33%);
+    line-height: 50rpx;
+}
+
+.middle {
+    border-left: 1px solid #ededed;
+    border-right: 1px solid #ededed;
+}
+
+/* icon */
+
+.icon {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.contri-icon {
+    width: 32rpx;
+    height: 32rpx;
+}
+
+/* 点赞、评论、消息、性格测试框 */
+
+.border-box {
+    width: 700rpx;
+    /* height: calc(100vh - 450rpx); */
+    box-shadow: 0 0 20rpx #f0f0f0;
+    border-radius: 20rpx;
+}
+
+.row {
+    width: 650rpx;
+    margin: 0 25rpx;
+    padding: 30rpx 0;
+    display: flex;
+    border-bottom: 1px solid #f2f2f2;
+    align-items: center;
+}
+
+.last-row {
+    border: none;
+}
+
+.title {
+    margin-left: 30rpx;
+}
+
+/* 伪类写图标 */
+
+.more::before {
+    content: '';
+    display: inline-block;
+    position: relative;
+    left: 580rpx;
+    top: -4rpx;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid #c8c8c8;
+    border-right: 1px solid #c8c8c8;
+    transform: rotate(45deg);
+}

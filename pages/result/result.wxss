@@ -1,0 +1,116 @@
+page {
+    width: 750rpx;
+}
+
+.container {
+    width: 700rpx;
+    height: 96vh;
+    margin-top: 10rpx;
+    margin-left: 25rpx;
+    border-radius: 10rpx;
+    box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.6);
+    background: #fffff5;
+    display: block;
+    /* 解决父级子级的margin-top办法 */
+    /* border: 1px solid; */
+    overflow: hidden;
+}
+
+.card {
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    width: 660rpx;
+    height: 96vh;
+}
+
+.pic-header {
+    width: 660rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20rpx;
+    margin-top: 20rpx;
+    height: 200rpx;
+}
+
+.pic {
+    width: 200rpx;
+    height: 200rpx;
+}
+
+.name-area {
+    font-size: 26rpx;
+    width: 420rpx;
+    margin-left: 30rpx;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200rpx;
+}
+
+.name {
+    font-weight: 700;
+}
+
+/* swiper-tab */
+
+.swiper-tab {
+    font-size: 26rpx;
+    width: 100%;
+    height: 40rpx;
+    margin-bottom: 20rpx; 
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.swiper-tab-list {
+    width: 150rpx;
+    text-align: center;
+    background: #e9deca;
+    border-radius: 10rpx;
+    display: inline-block;
+}
+
+/* 选中 */
+.on {
+  color: #cc9b47;
+}
+
+.swiper-area {
+    width: 660rpx;
+    height: calc(96vh - 362rpx);
+
+}
+
+swiper-item {
+    width: 100%;
+    height: 100%;
+}
+
+/* 隐藏滚动条 */
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+.introduction, .life, .evaluation {
+    width: 660rpx;
+    height: calc(96vh - 372rpx);
+    font-size: 26rpx;
+    line-height: 50rpx;
+}
+
+.bottom-area {
+    width: 100%;
+    height: 42rpx;
+    display: inline-flex;
+    justify-content: space-between;
+    margin-bottom: 20rpx;
+}
+
+.like, .dislike, .comment, .related, .revise {
+    width: 42rpx;
+    height: 42rpx;
+}

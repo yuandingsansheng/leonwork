@@ -1,0 +1,112 @@
+page {
+    font-size: 30rpx;
+    background: #fffff5;
+}
+
+.contaniner {
+    width: 750rpx;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.search-area {
+    width: 700rpx;
+    height: 70rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: rgba(81, 81, 81, 0.4) 1px solid;
+    margin-bottom: 70rpx;
+    margin-top: 50rpx;
+    margin-left: 25rpx;
+    border-radius: 20rpx;
+    box-shadow: 0 0 5px rgba(81, 81, 81, 0.4);
+    outline: none;
+}
+
+.search-icon {
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.search-input {
+    width: 650rpx;
+    height: 60rpx;
+    text-align: left;
+}
+
+.delete-icon {
+    margin-right: 10rpx;
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.matches {
+    margin-bottom: 50rpx;
+    width: 700rpx;
+    height: 300rpx;
+    margin-left: 25rpx;
+    background: rgb(219, 241, 252);
+    overflow: scroll;
+    background: linear-gradient(to left bottom, transparent 50%, rgba(0, 0, 0, 0.4) 0) no-repeat 100% 0 / 2em 2em,
+                linear-gradient(-135deg, transparent 1.5em, rgb(219, 241, 252) 0);
+}
+
+.name-area, .describe {
+    width: 620rpx;
+    margin-left: 40rpx;
+    margin-top: 30rpx;
+}
+
+.name {
+    font-size: 38rpx;
+    font-weight: 800;
+    color: rgba(224, 85, 50, 0.667);
+    margin-right: 10rpx;
+}
+
+.pinyin {
+    font-size: 30rpx;
+    color: #333;
+}
+
+.msg {
+    font-size: 21rpx;
+    margin-right: 30rpx;
+    color: #999;
+}
+
+.short-msg {
+    margin-left: 80rpx;
+    margin-top: 30rpx;
+}
+
+.describe {
+    height: 83rpx;
+    overflow: hidden;
+}
+
+.des {
+    font-size: 21rpx;
+    color: #999;
+}
+
+.tip {
+    position: fixed;
+    top: 45%;
+    left: 26%;
+    color: #ff7d40;
+}
+
+.findnone {
+    width: 128rpx;
+    height: 128rpx;
+    position: fixed;
+    left: 40%;
+    top: 50%;
+}

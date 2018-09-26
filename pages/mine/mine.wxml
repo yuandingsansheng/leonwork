@@ -1,0 +1,54 @@
+<!-- container -->
+<view class='container'>
+    <!-- 头像 -->
+    <open-data type="userAvatarUrl" class='avata'></open-data>
+    <!-- 昵称 -->
+    <open-data type="userNickName" class='nickName'></open-data>
+    <!-- 签到、活跃度、成就 -->
+    <view class='table-box'>
+        <!-- 签到 -->
+        <view class='box' bindtap='singUp'>
+            <view class='item'>连续签到</view>
+            <view class='content'>{{dayNumber}}天</view>
+        </view>
+        <!-- 活跃度 -->
+        <view class='box middle' bindtap='activeRule'>
+            <view class='item'>活跃度</view>
+            <view class='content'>
+                <image src='../../images/my-active.png' class='icon contri-icon'></image>{{active}}
+            </view>
+        </view>
+        <!-- 成就 -->
+        <view class='box'>
+            <view class='item'>成就</view>
+            <view class='content'>{{achievement[0]}}</view>
+        </view>
+    </view>
+    <!-- 点赞、评论、性格测试框 -->
+    <view class='border-box'>
+        <!-- 我的点赞 -->
+        <view class='row'>
+            <image src='../../images/my-love.png' class='icon'></image>
+            <view class='more'></view>
+            <text class='title'>我赞过的词条</text>
+        </view>
+        <!-- 我的评论 -->
+        <view class='row'>
+            <image src='../../images/my-comment.png' class='icon'></image>
+            <view class='more'></view>
+            <text class='title'>我的评论</text>
+        </view>
+        <!-- 消息盒子 -->
+        <view class='row'>
+            <image src='../../images/my-message.png' class='icon'></image>
+            <view class='more'></view>
+            <text class='title'>消息盒子</text>
+        </view>
+        <!-- 我的性格英雄 -->
+        <view class='row last-row'>
+            <image src='../../images/my-test.png' class='icon'></image>
+            <view class='more'></view>
+            <text class='title'>我的性格英雄</text>
+        </view>
+    </view>
+</view>

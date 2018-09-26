@@ -1,0 +1,79 @@
+<import src='../../wxParse/wxParse.wxml' />
+<view class='container'>
+    <view class='card'>
+        <!-- 头像区域 -->
+        <view class='pic-header'>
+            <!-- 头像 -->
+            <image class='pic' src='{{src}}'></image>
+            <!-- 简介区 -->
+            <view class='name-area'>
+                <!-- 姓名 -->
+                <view class='name'>{{heroName}}</view>
+                <!-- 字 -->
+                <text class='zi' decode='{{true}}'>{{heroZi}}&nbsp;{{heroShengzu}}</text>
+                <!-- 籍贯 -->
+                <view class='birth-place'>{{heroNative}}</view>
+                <!-- 效忠势力 -->
+                <view class='froce'>效力：{{heroShili}}</view>
+            </view>
+        </view>
+        <!-- swiper-tab -->
+        <view class='swiper-tab'>
+            <!-- 历史简介 -->
+            <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap='tapIntro'>历史简介</view>
+            <!-- 生平事迹 -->
+            <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap='tapLife'>生平事迹</view>
+            <!-- 综合评价 -->
+            <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap='tapEval'>综合评价</view>
+        </view>
+        <!-- 滑动部分 -->
+        <swiper class='swiper-area' current="{{currentTab}}" bindchange="bindChange">
+            <!-- 历史简介 -->
+            <swiper-item>
+                <scroll-view class='introduction' scroll-y>
+                    <view wx:if='{{haveIntro}}'>
+                        <template is='wxParse' data='{{wxParseData:heroContent.nodes}}' />
+                    </view>
+                    <view wx:else>
+                        <text decode='true'>&emsp;&nbsp;暂无记载</text>
+                    </view>
+                </scroll-view>
+            </swiper-item>
+            <!-- 生平事迹 -->
+            <swiper-item>
+                <scroll-view class='life' scroll-y>
+                    <view wx:if='{{haveLife}}'>
+                        <template is='wxParse' data='{{wxParseData:heroNianbiao.nodes}}' />
+                    </view>
+                    <view wx:else>
+                        <text decode='true'>&emsp;&nbsp;暂无记载</text>
+                    </view>
+                </scroll-view>
+            </swiper-item>
+            <!-- 综合评价 -->
+            <swiper-item>
+                <scroll-view class='evaluation' scroll-y>
+                    <view wx:if='{{haveEval}}'>
+                        <template is='wxParse' data='{{wxParseData:heroPingjia.nodes}}' />
+                    </view>
+                    <view wx:else>
+                        <text decode='true'>&emsp;&nbsp;暂无记载</text>
+                    </view>
+                </scroll-view>
+            </swiper-item>
+        </swiper>
+        <!-- 底部 -->
+        <view class='bottom-area'>
+            <!-- 赞 -->
+            <image class='like' src='{{likeSrc}}' bindtap='like'></image>
+            <!-- 踩 -->
+            <image class='dislike' src='{{dislikeSrc}}' bindtap='dislike'></image>
+            <!-- 评论 -->
+            <image class='comment' src='../../images/comment.png' bindtap='comment'></image>
+            <!-- 修改 -->
+            <!-- <image class='revise' src='../../images/revise.png' bindtap='revise'></image> -->
+            <!-- 推荐 -->
+            <image class='related' src='../../images/related.png' bindtap='related'></image>
+        </view>
+    </view>
+</view>

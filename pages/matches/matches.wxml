@@ -1,0 +1,37 @@
+<view class='container'>
+    <view class='search-area'>
+        <image src='../../images/search2.png' class='search-icon'></image>
+        <input type='text' placeholder='搜索词条' class='search-input' bindconfirm='search' confirm-type='search' value='{{inputText}}' maxlength='10'></input>
+        <image src='../../images/delete.png' class='delete-icon' bindtap='clearInput'></image>
+    </view>
+    <!-- 结果匹配 -->
+    <view  wx:if='{{haveMatches}}'>
+        <view wx:for='{{matches}}' wx:key='matches'>
+            <view id='{{item.heroId}}' bindtap='preciseChose'>
+                <view class='matches'>
+                    <!-- 姓名 -->
+                    <view class='name-area'>
+                        <text class='name'>{{item.heroName}}</text>
+                        <text class='pinyin'>({{item.heroPinyin}})</text>
+                    </view>
+                    <!-- 简介 -->
+                    <view class='short-msg'>
+                        <text class='msg'>{{item.heroSex}}</text>
+                        <text class='msg'>{{item.heroZi}}</text>
+                        <text class='msg'>{{item.heroShengzu}}</text>
+                        <text class='msg'>主效：{{item.heroShili}}</text>
+                    </view>
+                    <!-- 描述 -->
+                    <view class='describe'>
+                        <text class='des' decode="{{true}}">&emsp;&emsp;{{item.heroContent}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 没有结果出现提示消息 -->
+    <view wx:else>
+        <text class='tip' decode='{{true}}'>&emsp;小辞没有找到词条呢</text>
+        <image src='../../images/findnone.png' class='findnone'></image>
+    </view>
+</view>

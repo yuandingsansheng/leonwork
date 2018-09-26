@@ -1,0 +1,33 @@
+page {
+    height: 100%;
+}
+
+.contaniner {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    font-size: 40rpx;
+    background: url(https://wx3.sinaimg.cn/mw690/006oQknOgy1fuctk72vaqj30ku0xin4g.jpg) no-repeat;
+    background-size: 100vw 100vh;
+    justify-content: center;
+}
+
+
+button {
+    position: absolute;
+    top: 70%;
+    left: 15%;
+    width: 70vw;
+    height: 100rpx;
+    background: url(https://wx4.sinaimg.cn/mw690/006oQknOgy1fuct2tjxm6j30br02vwem.jpg);
+    background-size: 70vw 100rpx;
+    font-size: 40rpx;
+    font-weight: 800;
+    color: #6a6b71;
+}
+
+button::after {
+    display: none;
+    border: none;
+}

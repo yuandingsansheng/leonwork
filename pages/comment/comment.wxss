@@ -1,0 +1,140 @@
+page {
+    width: 750rpx;
+    padding: 0;
+    margin: 0;
+}
+
+/* container */
+
+.container {
+    width: 750rpx;
+    height: 100vh;
+    background: #fffff5;
+    overflow: hidden;
+}
+
+/* 内容区 */
+
+.area {
+    width: 700rpx;
+    margin-left: 25rpx;
+    margin-top: 10rpx;
+    max-height: 90vh;
+    overflow: scroll;
+    border-radius: 10rpx;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 评论区域 */
+
+.comment-area {
+    width: 700rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* title */ 
+
+.title {
+    margin-top: 20rpx;
+    font-size: 28rpx;
+    margin-bottom: 20rpx;
+    color: #6a6b71;
+}
+
+/* 单个评论  card */
+
+.card {
+    width: 600rpx;
+    display: inline-flex;
+    flex-direction: column;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* 评论---用户名 */
+
+.username {
+    font-size: 25rpx;
+    margin-top: 20rpx;
+    color: #cc9b47;
+}
+
+/* 评论内容 */
+
+.content {
+    font-size: 25rpx;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+    color: #c4c4c7;
+    display: inline-flex;
+    
+}
+
+/* 楼层 */
+.lou {
+    margin-right: 30rpx;
+    width: 50rpx;
+}
+
+.text {
+    font-size: 30rpx;
+    color: #6a6b71;
+    width: 500rpx;
+    line-height: 30rpx;
+}
+
+/* tip */
+
+.tip {
+    font-size: 28rpx;
+    width: 400rpx;
+    display: inline-block;
+    margin: 10rpx 175rpx;
+    color: #6a6b71;
+}
+
+/* input-area */
+
+.input-area {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    bottom: 0;
+    width: 750rpx;
+    height: 8vh;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0;
+}
+
+/* 输入框 */
+
+.input {
+    background: #ffffff;
+    width: 600rpx;
+    height: 60rpx;
+    margin-left: 20rpx;
+    border-radius: 10rpx;
+    font-size: 28rpx;
+    color: #6a6b71;
+}
+
+/* 提交按钮 */
+
+.send {
+    width: 120rpx;
+    height: 60rpx;
+    background: #f0f0f0;
+    font-size: 30rpx;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 60rpx;
+    color: #a8a8a8;
+}
+
+/* 去掉按钮边框 */
+
+button::after {
+    border: none;
+}

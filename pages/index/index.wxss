@@ -1,0 +1,221 @@
+/**index.wxss**/
+
+page {
+    font-size: 30rpx;
+    background: #fffff5;
+}
+
+.getuserInfoBtn {
+    position: fixed;
+    width: 750rpx;
+    height: 100vh;
+    opacity: 0;
+}
+
+.contaniner {
+    width: 750rpx;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.search-area {
+    width: 750rpx;
+    height: 80rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 0.6px solid #c0c0c0;
+    margin-bottom: 70rpx;
+    margin-top: 50rpx;
+}
+
+.fuzzy-area {
+    width: 650rpx;
+    height: 60rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 10rppx;
+    margin-right: 20rpx;
+}
+
+.search-icon {
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.search-input {
+    width: 600rpx;
+    height: 60rpx;
+    text-align: left;
+}
+
+.delete-icon {
+    margin-right: 10rpx;
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.conditional-query {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+}
+
+.fuzzy-area-f {
+    width: 640rpx;
+    height: 60rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid #c0c0c0;
+    margin-bottom: 10rpx;
+    margin-left: 10rpx;
+    margin-right: 20rpx;
+    border-radius: 10rpx;
+    background: #dcdcdc;
+}
+
+.conditional-query-f {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 30rpx;
+    margin-bottom: 10rpx;
+}
+
+.title-hot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50rpx;
+    width: 750rpx;
+    color: #cc9b47;
+    border-bottom: 1px solid #c0c0c0;
+    padding-bottom: 20rpx;
+    font-size: 36rpx;
+}
+
+.words {
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+}
+
+.line {
+    width: 70rpx;
+    height: 4rpx;
+    background: #cc9b47;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 750rpx;
+}
+
+.number {
+    margin-left: 60rpx;
+    font-size: 36rpx;
+    color: #cc9b47;
+}
+
+.name {
+    margin-left: 20rpx;
+    color: #6a6b71;
+}
+
+.text-area {
+    width: 375rpx;
+    height: 80rpx;
+    border-bottom: 1px solid #c0c0c0;
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* 条件查询弹框部分 */
+
+/*mask*/
+
+.mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: #000;
+    opacity: 0.5;
+    overflow: hidden;
+}
+
+/*content*/
+
+.drawr-box {
+    width: 650rpx;
+    overflow: hidden;
+    position: fixed;
+    top: 40%;
+    left: 0;
+    z-index: 9999;
+    background: #fffff5;
+    margin: -150px 50rpx 0 50rpx;
+    border-radius: 3px;
+}
+
+.drawer-title {
+    padding: 15px;
+    font: 20px "microsoft yahei";
+    text-align: center;
+}
+
+.Initials, .force-group, .birthplace, .gender {
+    width: 650rpx;
+    margin: 10rpx;
+    display: flex;
+    flex-direction: row;
+}
+
+.title {
+    width: 150rpx;
+    margin-left: 30rpx;
+    font-size: 28rpx;
+    height: 150rpx;
+    margin-top: 7rpx;
+    font-weight: 800;
+}
+
+.short {
+    height: 100rpx;
+}
+
+.item-box {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 600rpx;
+}
+
+.item {
+    height: 30rpx;
+    font-size: 26rpx;
+    padding: 10rpx 20rpx;
+    margin-left: 8rpx;
+}
+
+.confirm {
+    width: 200rpx;
+    margin-left: 225rpx;
+    font-size: 28rpx;
+    background: #cc9b47;
+    box-shadow: 0 0 5rpx rgba(81, 81, 81, 1);
+    margin-bottom: 30rpx;
+}

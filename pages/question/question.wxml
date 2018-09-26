@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<view class='container'>
+    <view class='progress'>
+        <view class='out'>
+            <view class='in' style='width:{{progressWidth}}%'></view>
+        </view>
+    </view>
+    <view class='question-area'>
+        <view class='page-hd'>
+            {{index+1}}、{{questionDetail}}
+        </view>
+        <view class="page-bd">
+            <button bindtap='answerClickA'>
+                <text class='order'>{{optionA}}.</text>
+                <text class='text'>{{answerA}}</text>
+            </button>
+            <button bindtap='answerClickB'>
+                <text class='order'>{{optionB}}.</text>
+                <text class='text'>{{answerB}}</text>
+            </button>
+            <button bindtap='answerClickC'>
+                <text class='order'>{{optionC}}.</text>
+                <text class='text'>{{answerC}}</text>
+            </button>
+        </view>
+    </view>
+</view>

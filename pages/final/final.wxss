@@ -1,0 +1,254 @@
+/* 版本1样式 */
+
+/* page {
+    height: 100%;
+}
+
+.resultContainer {
+    background: rgb(255, 255, 217);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.canvas-box {
+    width: 100%;
+    position: fixed;
+    top: 999999rpx;
+}
+
+/*把canvas放到屏幕之外*/
+
+/* canvas { 
+    width: 750rpx;
+}
+
+.tittle {
+    width: 80%;
+    height: 8%;
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+    line-height: 80rpx;
+    background-size: cover;
+    font-size: 36rpx;
+    color: #590000;
+}
+
+.result {
+    width: 600rpx;
+    height: 800rpx;
+    position: relative;
+    left: 75rpx;
+    background: url("https://wx3.sinaimg.cn/mw690/006oQknOgy1fucv0twfhpj30ge0jc0v2.jpg");
+    background-repeat: no-repeat;
+    background-size: 600rpx 800rpx;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.name {
+    margin: 10% 10%;
+    text-align: center;
+}
+
+.describe {
+    margin: 8% 10%;
+}
+
+.qrcode {
+    width: 150rpx;
+    height: 150rpx;
+    position: relative;
+    left: 75rpx;
+}
+
+.subtext {
+    font-size: 12px;
+    position: relative;
+    top: -120rpx;
+    left: 240rpx;
+    color: #590000;
+   
+}
+
+.userinfo-avatar {
+    position: relative;
+    left: 311rpx;
+    top: 40rpx;
+    width: 128rpx;
+    height: 128rpx;
+    border-radius: 50%;
+}
+
+.btnArea {
+    position: relative;
+    top: 50rpx;
+    width: 750rpx;
+    display: flex;
+    flex-flow: row;
+}
+
+#return {
+    width: 220rpx;
+    height: 80rpx;
+    margin-left: 75rpx;
+    background-image: url("https://wx3.sinaimg.cn/mw690/006oQknOgy1fu37z1imipj306y0280at.jpg");
+    background-size: 220rpx 80rpx;
+    color: #590000;
+}
+
+#save {
+    width: 220rpx;
+    height: 80rpx;
+    margin-right: 75rpx;
+    background-image: url("https://wx4.sinaimg.cn/mw690/006oQknOgy1fu37yofxu7j306y0280b3.jpg");
+    background-size: 220rpx 80rpx;
+    color: #590000;
+} */
+
+/* 版本2样式 */
+
+page {
+    height: 100vh;
+}
+
+.container {
+    background: #fffff5;
+    width: 750rpx;
+    height: 100%;
+    overflow: hidden;
+}
+
+.result-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    background: url("https://wx4.sinaimg.cn/mw690/006oQknOgy1fukxa2bsnhj30ge0jc3z8.jpg");
+    width: 455rpx;
+    height: 557rpx;
+    margin-left: 147rpx;
+    margin-top: 48rpx;
+    text-align: center;
+    font-size: 32rpx;
+    background-size: 455rpx 557rpx;
+    background-repeat: no-repeat;
+    margin-bottom: 50rpx;
+}
+
+.title {
+    transform: translateY(-100%);
+}
+
+.name {
+    font-size: 60rpx;
+    color: #7a0707;
+    font-style: initial;
+    font-weight: 800;
+    font-family: 'LiSu';
+}
+
+.describe {
+    transform: translateY(40%);
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 28rpx;
+}
+
+.goal-box {
+    display: flex;
+    flex: row;
+    align-items: center;
+}
+
+.goal {
+    width: 447rpx;
+    height: 188rpx;
+    display: inline-flex;
+    align-items: center;
+    margin-right: 40rpx;
+    font-size: 32rpx;
+    line-height: 50rpx;
+    border-top: solid 1px #ccc;
+    border-bottom: solid 1px #ccc;
+}
+
+.goal-text {
+    margin-left: 60rpx;
+}
+
+.nick-name {
+    font-weight: 500;
+    color: #333;
+    font-size: 40rpx;
+    margin-left: 20rpx;
+}
+
+.qr-msg {
+    width: 400rpx;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.qrcode {
+    width: 275rpx;
+    height: 275rpx;
+    border-radius: 50%;
+    transform: translateY(-3%) translateX(-10%);
+}
+
+.qr-describe {
+    font-size: 28rpx;
+    margin-bottom: 20rpx;
+    transform: translateX(-10%);
+}
+
+.white-border {
+    width: 750rpx;
+    height: 20rpx;
+    margin-top: 5rpx;
+    background-color: #f3f4f5;
+}
+
+.btnArea {
+    width: 600rpx;
+    height: 140rpx;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    margin-left: 75rpx;
+}
+
+button {
+    width: 240rpx;
+    height: 63rpx;
+    font-size: 25rpx;
+}
+
+#return {
+    background: url('https://wx3.sinaimg.cn/mw690/006oQknOgy1fu37z1imipj306y0280at.jpg');
+    background-size: 240rpx 63rpx;
+}
+
+#save {
+    background: url('https://wx4.sinaimg.cn/mw690/006oQknOgy1fu37yofxu7j306y0280b3.jpg');
+    background-size: 240rpx 63rpx;
+}
+
+canvas {
+    position: fixed;
+    top: 99999px;
+    width: 750rpx;
+    height: 1228rpx;
+}

@@ -1,0 +1,37 @@
+<!-- 容器 -->
+<view class='container'>
+    <!-- 有评论的时候 -->
+    <view wx:if='{{haveComment}}'>
+        <!-- 内容区 -->
+        <view class='area'>
+            <view class='comment-area'>
+                <!-- title -->
+                <view class='title'>用户评论</view>
+                <view wx:for='{{comments}}' wx:key='comments'>
+                    <view class='card'>
+                        <!-- 姓名 -->
+                        <view class='username'>{{item.username}}</view>
+                        <!-- 评论内容 -->
+                        <view class='content'>
+                            <!-- 楼层 -->
+                            <text class='lou'>{{index+1}}楼</text>
+                            <!-- 内容 -->
+                            <text class='text'>{{item.content}}</text>
+                        </view>
+
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 没有评论的时候 -->
+    <view wx:else>
+        <!-- 提示信息 -->
+        <text class='tip'>暂无评论，快来争当第一吧!</text>
+    </view>
+    <!-- 输入框 -->
+    <view class='input-area'>
+        <input type='text' placeholder=' 想说点什么？抖个机灵~' placeholder-style='colore:#a8a8a8' class='input' value='{{inputText}}' bindinput='input' cursor='20'></input>
+        <button bindtap='send' class='send'>发送</button>
+    </view>
+</view>

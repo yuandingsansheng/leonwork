@@ -1,0 +1,105 @@
+<view class='contianer'>
+    <!-- 没有获得用户信息的时候 -->
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='getuserInfoBtn'></button>
+    <!-- 搜索框 -->
+    <view class='search-area'>
+        <view class='{{fuzzy}}'>
+            <image src='../../images/search2.png' class='search-icon'></image>
+            <input type='text' placeholder='搜索词条' class='search-input' bindinput='bindInput' bindconfirm='search' confirm-type='search' value='{{inputText}}' maxlength='10' bindfocus='focus' bindblur='blur'></input>
+            <!-- 删除图标 -->
+            <view wx:if='{{display}}'>
+                <image src='../../images/delete.png' class='delete-icon' bindtap='clearInput'></image>
+            </view>
+        </view>
+        <!-- 条件搜索图标 -->
+        <image src='{{listSrc}}' class='{{conditional}}' bindtap="powerDrawer" data-statu="open"></image>
+    </view>
+
+    <!-- mask -->
+    <view class='mask' bindtap='powerDrawer' wx:if='{{showModalStatus}}' data-statu="close"></view>
+    <!--content-->
+    <!--使用animation属性指定需要执行的动画-->
+    <view animation='{{animationData}}' class='drawr-box' wx:if='{{showModalStatus}}'>
+        <view class="drawer-title">条件查询</view>
+        <view class="drawer-content">
+            <view class='Initials'>
+                <view class='title'>首字字母</view>
+                <view class='item-box'>
+                    <view wx:for='{{Initials}}' wx:for-item='letter' wx:key='Initials'>
+                        <view id='{{index}}' bindtap='chooseInitials'>
+                            <view wx:if='{{index == clickInitialId}}'>
+                                <view class='item' data-text='{{letter}}' style='background:#cc9b47'>{{letter}}</view>
+                            </view>
+                            <view wx:else>
+                                <view class='item' data-text='{{letter}}'>{{letter}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class='force-group'>
+                <view class='title'>主要势力</view>
+                <view class='item-box'>
+                    <view wx:for='{{forceGroup}}' wx:key='forceGroup'>
+                        <view id='{{index}}' bindtap='chooseForceGroup'>
+                            <view wx:if='{{index == clickForceId}}'>
+                                <view class='item' data-text='{{item}}' style='background:#cc9b47'>{{item}}</view>
+                            </view>
+                            <view wx:else>
+                                <view class='item' data-text='{{item}}'>{{item}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class='birthplace'>
+                <view class='title'>古代籍贯</view>
+                <view class='item-box'>
+                    <view wx:for='{{birthplace}}' wx:key='birthplace'>
+                        <view id='{{index}}' bindtap='chooseBirthPlace'>
+                            <view wx:if='{{index == clcikBId}}'>
+                                <view class='item' data-text='{{item}}' style='background:#cc9b47'>{{item}}</view>
+                            </view>
+                            <view wx:else>
+                                <view class='item' data-text='{{item}}'>{{item}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class='gender'>
+                <view class='title short'>人物性别</view>
+                <view class='item-box'>
+                    <view wx:for='{{gender}}' wx:key='gender'>
+                        <view id='{{index}}' bindtap='chooseGender'>
+                            <view wx:if='{{index == clickGenderId}}'>
+                                <view class='item' data-text='{{item}}' style='background:#cc9b47'>{{item}}</view>
+                            </view>
+                            <view wx:else>
+                                <view class='item' data-text='{{item}}'>{{item}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <button bindtap="confirm" data-statu="close" class='confirm'>确认筛选</button>
+    </view>
+    <view wx:else>
+        <!-- 热门搜索 -->
+        <view class='title-hot'>
+            <view class='line'></view>
+            <text class='words'>热门搜索</text>
+            <view class='line'></view>
+        </view>
+        <!-- 热门列表 -->
+        <view class='row'>
+            <view wx:for='{{hotsearch}}' wx:for-item="name" wx:key='hotsearch'>
+                <view class='text-area'>
+                    <text class='number'>{{index + 1}}</text>
+                    <text class='name' bindtap='hotSearch' data-text='{{name}}'>{{name}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

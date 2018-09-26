@@ -1,0 +1,46 @@
+<!-- 版本1样式 -->
+<!-- 
+<view class='resultContainer'>
+    <view class='canvas-box'>
+        <canvas canvas-id='myCanvas' style='height:{{canvasHeight}}rpx' ></canvas>
+    </view>
+    <image class="userinfo-avatar" src="{{userInfopUrl}}" mode="cover"></image>
+    <view class='tittle'><text>三国群雄，我是</text></view>
+    <view class='result'>
+        <view class='name'>{{name}}</view> 
+        <view class='describe'>{{describe}}</view> 
+        <image class='qrcode' src="../../images/pg1.jpg"></image>
+        <view class='subtext'><text>长按小程序码识别测试\n你是哪位三国英雄</text></view>
+    </view>
+    <view class='btnArea'>
+        <button bindtap='return' id='return'>重新测试</button>
+        <button bindtap='saveImg' id='save'>保存图片</button>
+    </view>
+</view> -->
+
+
+<!-- 版本二 -->
+<view class='container'>
+    <view class='result-box'>
+        <view class='title'>三国群雄，我是</view>
+        <view class='name'>{{name}}</view> 
+        <view class='describe'>{{describe}}</view>
+    </view>
+    <view class='goal-box'>
+        <view class='goal'>
+            <text class='goal-text'>我是<text class='nick-name'>{{userInfonickName}}\n</text>邀请您一起来测一测\n三国群雄，我是谁</text>
+        </view>
+        <view class='qr-msg'>
+            <image class='qrcode' src="../../images/pg1.png"></image>
+            <text class='qr-describe'>长按识别小程序码</text>
+        </view>
+    </view>
+    <view class='white-border'></view>
+    <view class='btnArea'>
+        <button bindtap='return' id='return'>重新测试</button>
+        <button bindtap='saveImg' id='save'>保存图片</button>
+    </view>
+</view>
+
+<canvas canvas-id='myCanvas2'></canvas>
+ 
