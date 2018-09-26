@@ -103,10 +103,6 @@ Page({
                 })
             }  
         }
-        console.log(typeof(signData.lastSignData));
-        console.log(typeof (signData.lastSignDay));
-        console.log(typeof (signData.totalDate));
-        console.log(typeof (signData.continuousDate));
         that.onLoad();
     },
 
