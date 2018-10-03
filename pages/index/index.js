@@ -13,7 +13,7 @@ Page({
         hasUserInfo: false,
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
 
-        hotsearch: ["诸葛亮", "刘备", "郭嘉", "周瑜", "关羽", "曹操", "孙权", "荀彧", "鲁肃", "张飞"],
+        hotsearch: [], // 推荐人物
         inputText: '',
         display: false, // 删除按钮展示
         fuzzy: 'fuzzy-area', //模糊搜索框
@@ -22,8 +22,8 @@ Page({
         bind: false, // 条件查询是否点击
         showModalStatus: false, // 条件查询弹框
         /* 条件查询列表 */
-        Initials: ['不限', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'W', 'X', 'Y', 'Z'],
-        forceGroup: ['不限', '东汉', '魏', '蜀', '吴','袁绍', '刘表', '董卓', '刘璋', '西晋', '起义军', '少数民族'],
+        Initials: ['不限', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'w', 'x', 'y', 'z'],
+        forceGroup: ['不限', '东汉', '魏', '蜀', '吴', '袁绍', '刘表', '董卓', '刘璋', '西晋', '起义军', '少数民族'],
         birthplace: ['不限', '并州', '冀州', '交州', '荆州', '凉州', '青州', '司隶', '徐州', '䆓州', '扬州', '益州', '幽州', '豫州'],
         gender: ['不限', '男', '女'],
 
@@ -43,7 +43,7 @@ Page({
 
 
     // 获取用户信息
-    getUserInfo: function (e) {
+    getUserInfo: function(e) {
         // console.log(JSON.parse(e.detail.rawData))
         app.globalData.userInfo = JSON.parse(e.detail.rawData);
         wx.setStorageSync('userInfo', JSON.parse(e.detail.rawData));
@@ -83,6 +83,28 @@ Page({
                 }
             })
         }
+        // 高频人物
+        let role = app.globalData.people;
+        // 新建一个空数组
+        let temp = new Array;
+        for (let i = 0; i < role.length; i++) {
+            temp[i] = i;
+        }
+        // 推荐人物数组
+        let recommondPeople = new Array(10);
+        // 随机产生不重复的10个 0 —— (role.length-1)数
+        for (let num, j = 0; j < 10; j++) {
+            do {
+                num = parseInt(Math.random() * (role.length - 1));
+                recommondPeople[j] = role[num];
+            } while (temp[num] == null);
+            temp[num] = null;
+        }
+        this.setData({
+            hotsearch: recommondPeople
+        })
+
+        // 条件查询
 
     },
 
@@ -194,11 +216,11 @@ Page({
 
             //关闭
             if (currentStatu == "close") {
-                
+
                 that.setData({
                     showModalStatus: false,
                     listSrc: '../../images/list.png',
-                    choseInput: '', 
+                    choseInput: '',
                     clickInitialId: 0, // 首字母index
                     clickForceId: 0, // 势力index
                     clcikBId: 0, // 籍贯index
@@ -212,7 +234,7 @@ Page({
         if (currentStatu == 'open') {
             that.setData({
                 showModalStatus: true,
-                 listSrc: '../../images/listchose.png',
+                listSrc: '../../images/listchose.png',
             })
         }
     },
@@ -289,13 +311,22 @@ Page({
     // 确认
     confirm: function() {
         let that = this;
-        app.search(that.data.choseInpt, function(res) {
+        let data = {
+            'letter': `${that.data.cInitial}`, // 首字母
+            'heroShili': `${that.data.cForce}`,  // 势力
+            'heroNative': `${that.data.cBplace}`, // 籍贯
+            'heroSex': `${that.data.cGender}` // 性别
+        }
+        // 搜索
+        app.conditionalQuery(data,function(res) {
             let data = res.data.data;
             let text = that.data.choseInput;
             wx.navigateTo({
-                url: '../matches/matches?data=' + JSON.stringify(data) + '&inputText=' + text
-            })
+                 url: '../matches/matches?data=' + JSON.stringify(data) + '&inputText=' + text
+             })
+            // console.log(data);
         })
+        
     },
 
     /**
@@ -320,7 +351,12 @@ Page({
             clickForceId: 0, // 势力index
             clcikBId: 0, // 籍贯index
             clickGenderId: 0, // 性别index
-            showModalStatus: false // 条件查询弹框
+            showModalStatus: false, // 条件查询弹框
+            choseInput: '', // 选择内容
+            cInitial: '', // 选择首字母
+            cForce: '', // 选择势力
+            cBplace: '', // 选择籍贯
+            cGender: '', // 选择性别
         })
     },
 

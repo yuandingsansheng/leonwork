@@ -7,6 +7,10 @@
         "pages/question/question",
         "pages/final/final",
         "pages/mine/mine",
+        "pages/message/message",
+        "pages/mycomments/mycomments",
+        "pages/myhero/myhero",
+        "pages/mylike/mylike",
         "pages/comment/comment",
         "pages/logs/logs"
     ],

@@ -1,0 +1,67 @@
+page {
+    width: 750rpx;
+    height: 100vh;
+    background: #fffff5;
+    overflow: hidden;
+}
+
+.container {
+    width: 750rpx;
+    height: 100vh;
+    color: #6a6b71;
+    overflow: scroll;
+    font-size: 28rpx;
+}
+
+/* 消息盒子 */
+
+.message-box {
+    width: 700rpx;
+    height: auto;
+    margin: 20rpx 25rpx;
+    border-radius: 10rpx;
+    box-shadow: 0 0 10rpx #c0c0c0;
+}
+
+/* card */
+
+.card {
+    width: 650rpx;
+    margin-left: 28rpx;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.first-card {
+    border: none;
+}
+
+/* message */
+
+.message {
+    margin-top: 10rpx;
+    line-height: 50rpx;
+    display: inline-flex;
+    align-items: center;
+}
+
+
+/* 日期 */
+
+.date {
+    display: block;
+    margin-top: 10rpx;
+    margin-bottom: 5rpx;
+    position: relative;
+    left: 500rpx;
+}
+
+
+/* 提示信息 */
+
+.tip {
+    font-size: 28rpx;
+    width: 300rpx;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}

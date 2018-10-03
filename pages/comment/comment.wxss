@@ -34,7 +34,7 @@ page {
     align-items: center;
 }
 
-/* title */ 
+/* title */
 
 .title {
     margin-top: 20rpx;
@@ -68,13 +68,21 @@ page {
     margin-bottom: 20rpx;
     color: #c4c4c7;
     display: inline-flex;
-    
+    justify-content: start;
+}
+
+/* 隐藏滚动条 */
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
 }
 
 /* 楼层 */
+
 .lou {
     margin-right: 30rpx;
-    width: 50rpx;
 }
 
 .text {
@@ -111,7 +119,7 @@ page {
 /* 输入框 */
 
 .input {
-    background: #ffffff;
+    background: #fff;
     width: 600rpx;
     height: 60rpx;
     margin-left: 20rpx;

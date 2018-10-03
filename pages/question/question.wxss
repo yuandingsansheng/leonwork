@@ -68,7 +68,9 @@ button {
     border-radius: 10rpx;
     margin-top: 50rpx;
     text-align: center;
-    background: linear-gradient(45degrgb(161, 55, 55) 0, #d9d4d4 50%);
+    background-image: url('https://wx2.sinaimg.cn/mw690/006oQknOgy1fvraaohnaaj30eg02s0lw.jpg');
+    background-size: 100% 100% ;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
 }

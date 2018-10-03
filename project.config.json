@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 8,
 			"list": [
 				{
 					"id": -1,
@@ -54,16 +54,39 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 3,
 					"name": "评论",
 					"pathName": "pages/comment/comment",
-					"query": ""
+					"query": "heroId=20"
 				},
 				{
 					"id": -1,
 					"name": "我的",
 					"pathName": "pages/mine/mine",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "性格测试结果",
+					"pathName": "pages/final/final",
+					"query": "A=3&B=4&C=3"
+				},
+				{
+					"id": -1,
+					"name": "我的赞",
+					"pathName": "pages/mylike/mylike",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "问题",
+					"pathName": "pages/question/question",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的消息",
+					"pathName": "pages/message/message"
 				}
 			]
 		}

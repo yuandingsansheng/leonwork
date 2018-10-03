@@ -10,42 +10,6 @@ page {
     padding: 0;
     overflow: hidden;
 }
-
-.search-area {
-    width: 700rpx;
-    height: 70rpx;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    border: rgba(81, 81, 81, 0.4) 1px solid;
-    margin-bottom: 70rpx;
-    margin-top: 50rpx;
-    margin-left: 25rpx;
-    border-radius: 20rpx;
-    box-shadow: 0 0 5px rgba(81, 81, 81, 0.4);
-    outline: none;
-}
-
-.search-icon {
-    margin-left: 10rpx;
-    margin-right: 10rpx;
-    width: 40rpx;
-    height: 40rpx;
-}
-
-.search-input {
-    width: 650rpx;
-    height: 60rpx;
-    text-align: left;
-}
-
-.delete-icon {
-    margin-right: 10rpx;
-    width: 30rpx;
-    height: 30rpx;
-}
-
 .matches {
     margin-bottom: 50rpx;
     width: 700rpx;
@@ -97,22 +61,10 @@ page {
 }
 
 .tip {
-    position: fixed;
-    top: 45%;
-    left: 26%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
     color: #c0c0c0;
 }
 
-.findnone {
-    width: 128rpx;
-    height: 128rpx;
-    position: fixed;
-    left: 40%;
-    top: 50%;
-}
-/* 去掉滚动条 */
-::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-    color: transparent;
-}

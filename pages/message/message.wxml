@@ -1,0 +1,32 @@
+<view class='container'>
+    <!-- 有消息的时候 -->
+    <view wx:if='{{havemessage}}'>
+        <!-- 消息盒子 -->
+        <view class='message-box'>
+            <view wx:for='{{message}}' wx:key='message'>
+                <!-- 显示信息 -->
+                <view wx:if='{{index==0}}'>
+                    <!-- 消息词条 -->
+                    <view class='card first-card' bindtap='details'>
+                        <text class='message'>胖友您好，您在词条 [{{item.heroName}}] 的评论因不符合网络文明而被删除</text>
+                        <!-- 日期 -->
+                        <text class='date'>{{date}}</text>
+                    </view>
+                </view>
+                <view wx:else>
+                    <!-- 消息词条 -->
+                    <view class='card' bindtap='details'>
+                        <text class='message'>胖友您好，您在词条 [{{item.heroName}}] 的评论因不符合网络文明而被删除</text>
+                        <!-- 日期 -->
+                        <text class='date'>{{date}}</text>
+                    </view>
+
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 没有消息 -->
+    <view wx:else>
+        <text class='tip'>空空如也哦</text>
+    </view>
+</view>

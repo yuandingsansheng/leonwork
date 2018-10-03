@@ -29,7 +29,6 @@ Page({
     },
     onLoad: function () {
         this.setList();
-        //this.setABC();
     },
     sortNum: function () {
         return 0.5 - Math.random();
@@ -48,7 +47,7 @@ Page({
             property3: this.data.property3 + app.globalData.question[this.data.realIndex].option.A.weight[2],
             progressWidth: this.data.progressWidth + 10,
         });
-        // console.log(this.data.property1, this.data.property2, this.data.property3);
+        
         if (this.data.index < app.globalData.question.length - 1) {
             this.setData({
                 index: this.data.index + 1,
@@ -75,7 +74,7 @@ Page({
             property3: this.data.property3 + app.globalData.question[this.data.realIndex].option.B.weight[2],
             progressWidth: this.data.progressWidth + 10,
         })
-        // console.log(this.data.property1, this.data.property2, this.data.property3)
+        
         if (this.data.index < app.globalData.question.length - 1) {
             this.setData({
                 index: this.data.index + 1,
@@ -103,7 +102,7 @@ Page({
             property3: this.data.property3 + app.globalData.question[this.data.realIndex].option.C.weight[2],
             progressWidth: this.data.progressWidth + 10,
         })
-        // console.log(this.data.property1, this.data.property2, this.data.property3)
+        
         if (this.data.index < app.globalData.question.length - 1) {
             this.setData({
                 index: this.data.index + 1,

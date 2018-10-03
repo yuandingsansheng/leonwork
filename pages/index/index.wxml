@@ -89,10 +89,10 @@
         <!-- 热门搜索 -->
         <view class='title-hot'>
             <view class='line'></view>
-            <text class='words'>热门搜索</text>
+            <text class='words'>推荐人物</text>
             <view class='line'></view>
         </view>
-        <!-- 热门列表 -->
+        <!-- 推荐列表 -->
         <view class='row'>
             <view wx:for='{{hotsearch}}' wx:for-item="name" wx:key='hotsearch'>
                 <view class='text-area'>

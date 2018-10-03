@@ -393,6 +393,16 @@ Page({
     },
 
 
+// 查看该英雄的更多信息
+findMore:function(e) {
+    app.search(e.target.dataset.text, function (res) {
+        let data = res.data.data;
+        wx.navigateTo({
+            url: '../matches/matches?data=' + JSON.stringify(data) + '&inputText=' + e.target.dataset.text
+        })
+    })
+},
+
     /**
      * 生命周期函数--监听页面初次渲染完成
      */

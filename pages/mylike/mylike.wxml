@@ -1,0 +1,31 @@
+<view class='container'>
+    <!-- 结果匹配 -->
+    <view  wx:if='{{like}}'>
+        <view wx:for='{{likedEntry}}' wx:key='likedEntry'>
+            <view id='{{item.heroId}}' bindtap='preciseChose'>
+                <view class='matches'>
+                     <!-- 姓名 -->
+                    <view class='name-area'>
+                        <text class='name'>{{item.heroName}}</text>
+                        <text class='pinyin'>({{item.heroPinyin}})</text>
+                    </view>
+                    <!-- 简介 -->
+                    <view class='short-msg'>
+                        <text class='msg'>{{item.heroSex}}</text>
+                        <text class='msg'>{{item.heroZi}}</text>
+                        <text class='msg'>{{item.heroShengzu}}</text>
+                        <text class='msg'>主效：{{item.heroShili}}</text>
+                    </view>
+                    <!-- 描述 -->
+                    <view class='describe'>
+                        <text class='des' decode="{{true}}">&emsp;&emsp;{{item.heroContent}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 没有结果出现提示消息 -->
+    <view wx:else>
+        <text class='tip' decode='{{true}}'>&emsp;您目前还没有赞过的词条呢</text>
+    </view>
+</view>

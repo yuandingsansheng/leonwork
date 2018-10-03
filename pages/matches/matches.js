@@ -26,7 +26,7 @@ Page({
     search: function(e) {
         let that = this;
         app.search(e.detail.value, function(res) {
-            console.log(res);
+            
             if (res.data.data.length == 0) {
                 that.setData({
                     haveMatches: false
@@ -55,7 +55,7 @@ Page({
     onLoad: function(options) {
         let that = this;
 
-        console.log(options.data);
+        // console.log(options.data);
         if (JSON.parse(options.data).length == 0) {
             that.setData({
                 haveMatches: false

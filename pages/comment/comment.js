@@ -8,6 +8,8 @@ Page({
         haveComment: false, // 评论初始没有
         inputText: '', // 输入内容
         comments: [], // 评论
+        heroId: '', // 评论的英雄的id
+        heroName: '', // 英雄名字
     },
 
 
@@ -16,19 +18,31 @@ Page({
         let that = this;
         let value = that.data.inputText;
         let username = wx.getStorageSync('userInfo');
+        let lastComments = wx.getStorageSync('comments');
         if (value != '') {
-            let newComment = {
-                'username': `${username.nickName}`,
-                'content': value
-            };
-            let comments = that.data.comments;
-            comments.push(newComment);
+            if (!lastComments) { // 第一次评论
+                let firstComment = [{
+                    'username': `${username.nickName}`,
+                    'content': value,
+                    'heroId': that.data.heroId,
+                    'heroName': that.data.heroName
+                }];
+                wx.setStorageSync('comments', firstComment);
+            } else {
+                let newComment = {
+                    'username': `${username.nickName}`,
+                    'content': value,
+                    'heroId': that.data.heroId,
+                    'heroName': that.data.heroName
+                };
+                lastComments.push(newComment);
+                wx.setStorageSync('comments', lastComments);
+            }
             that.setData({
+                comments: wx.getStorageSync('comments'),
                 haveComment: true,
-                inputText: '',
-                comments: comments
-            });
-            that.onLoad();
+                inputText: ''
+            })
         }
     },
 
@@ -40,15 +54,25 @@ Page({
         })
     },
 
-    
+
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
+        // debugger;
         let that = this;
-        if (that.data.comments.length != 0) {
+        console.log(options);
+        that.setData({
+            heroId: options.heroId,
+            heroName: options.heroName
+        })
+        let comments = wx.getStorageSync('comments');
+        let username = wx.getStorageSync('userInfo');
+        if (comments) {
             that.setData({
-                haveComment: true
+                comments: comments,
+                haveComment: true,
+                inputText: '',
             })
         }
     },

@@ -1,6 +1,6 @@
 //app.js
 var Config = {
-    service: "https://dcg.styihm.com/hero/"
+    service: "https://www.styihm.com/hero/"
 }
 App({
     onLaunch: function() {
@@ -15,10 +15,12 @@ App({
                 // 发送 res.code 到后台换取 openId, sessionKey, unionId
             }
         })
+
+        wx.setTabBarStyle({
+            selectedColor: '#cc9b47'
+        })
     },
-    globalData: {
-        userInfo: null
-    },
+
     search: function(name, cb) {
         wx.request({
             url: `${Config.service}intro/${name}`,
@@ -28,7 +30,7 @@ App({
             fail: function(res) {
                 wx.showToast({
                     title: "获取失败!",
-                    icon: 'fail',
+                    icon: 'success',
                     duration: 2000
                 })
             }
@@ -40,26 +42,44 @@ App({
     preciseSearch: function(id, cb) {
         wx.request({
             url: `${Config.service}details/${id}`,
-
             success: function(res) {
                 cb(res);
             },
             fail: function(res) {
                 wx.showToast({
                     title: "获取失败!",
-                    icon: 'fail',
+                    icon: 'none',
                     duration: 2000
                 })
             }
         })
     },
 
+    // 条件查询
+
+    conditionalQuery: function(data, cb) {
+        console.log(data);
+        wx.request({
+            url: `${Config.service}intro/condition`,
+            method: "POST",
+            data:(data),
+            success: function(res) {
+                cb(res);
+            },
+            fail: function(res) {
+                wx.showToast({
+                    title: '获取失败',
+                    icon: 'none',
+                    duration: 2000
+                })
+            }
+        })
+    },
 
     // 性格测试数据和结果
     globalData: {
         userInfo: null,
-        question: [
-            {
+        question: [{
                 "question": "如果你穿越到三国时期，你希望拥有什么能力",
                 "option": {
                     "A": {
@@ -230,8 +250,7 @@ App({
                 }
             }
         ],
-        kind: [
-            {
+        kind: [{
                 "name": ["费祎", "董允", "张昭", "张纮", "虞翻", "蒋琬"],
                 "describe": "你做事大胆，敢于冒险，通晓时局，运筹帷幄，有着深思熟虑的大智慧。",
             },
@@ -271,5 +290,8 @@ App({
 
             }
         ],
+
+        // 高频人物
+        people: ['张飞', '赵云', '周瑜', '曹操', '诸葛亮', '刘备', '关羽', '吕布', '袁绍', '司马懿', '孙权', '姜维', '马超', '徐晃', '郭嘉', '貂蝉', '徐庶', '马良', '夏侯渊', '刘璋', '关兴', '徐盛', '孟获', '刘表', '司马昭', '鲁肃', '孙坚', '张角', '黄忠', '庞统', '华佗', '陆逊', '法正', '曹丕', '曹植', '郭淮', '左慈', '夏侯惇', '甘宁', '贾诩', '张辽', '董允', '孔融', '杨修', '蒋琬', '祢衡', '袁尚', '张宝', '马岱', '夏侯霸', '曹真', '何进', '陈宫', '张让', '邓艾', '袁术', '周泰', '司马炎', '黄祖', '杨仪', '司马师', '费祎', '曹爽', '庞德', '华雄', '于禁', '马谡', '程普', '文聘', '张鲁', '陶谦', '吕蒙', '丁奉', '廖化', '文丑', '荀彧', '王平', '凌统', '诸葛瑾', '典韦', '太史慈', '孙策', '高顺', '文钦', '孙桓', '吴懿', '孙礼', '郭图', '王经', '邓芝', '郭汜', '朱桓', '袁谭', '费观', '张济', '阿会喃', '袁熙', '审配', '董袭', '马腾', '淳于琼', '刘繇', '丁原', '田丰', '夏侯尚', '满宠', '蒋钦', '高定', '蒯越', '耿纪', '周仓', '杨奉', '樊稠', '曹嵩', '孙乾', '简雍', '谯周', '孙夫人', '公孙渊', '李严', '潘璋', '钟会', '公孙瓒', '车胄', '董承', '张任', '韩当', '朱然', '华歆', '高干', '杜预', '吴班', '纪灵', '皇甫嵩', '乐进', '李典', '韩遂', '钟繇', '步骘', '杨阜', '臧霸', '郝昭', '张嶷', '孙皓', '卢植', '黄权', '曹休', '王子服', '陈泰', '颜良', '沮授', '刘封', '夏侯楙', '管辂', '蒋干', '曹仁', '严白虎', '程昱', '蔡瑁', '关平', '高翔', '严颜', '刘晔', '王允', '冯习', '陈武', '陈登', '伊籍', '李儒', '刘琦', '王必', '韩暹', '侯成', '孟优', '黄皓', '魏续', '陈式', '李乐', '赵范', '焦触', '雅丹', '吕翔', '刘辟', '杨任', '吴兰', '宋宪', '高览', '杨松', '雷铜', '曹豹', '韩玄']
     }
 })
