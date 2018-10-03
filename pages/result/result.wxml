@@ -70,8 +70,6 @@
             <image class='dislike' src='{{dislikeSrc}}' bindtap='dislike'></image>
             <!-- 评论 -->
             <image class='comment' src='../../images/comment.png' bindtap='comment'></image>
-            <!-- 修改 -->
-            <!-- <image class='revise' src='../../images/revise.png' bindtap='revise'></image> -->
             <!-- 推荐 -->
             <image class='related' src='../../images/related.png' bindtap='related'></image>
         </view>

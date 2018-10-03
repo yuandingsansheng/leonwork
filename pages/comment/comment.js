@@ -38,11 +38,27 @@ Page({
                 lastComments.push(newComment);
                 wx.setStorageSync('comments', lastComments);
             }
+            // 如果又本条词条的评论
+
+            // 新建一个空的评论数组
+            let thisComments = [];
+            for (let i = 0; i < lastComments.length; i++) {
+                if (lastComments[i].heroId == that.data.heroId) {
+                    thisComments.push(lastComments[i]);
+                }
+            }
+
             that.setData({
-                comments: wx.getStorageSync('comments'),
+                comments: thisComments,
                 haveComment: true,
-                inputText: ''
+                inputText: '',
             })
+
+            // that.setData({
+            //     comments: wx.getStorageSync('comments'),
+            //     haveComment: true,
+            //     inputText: ''
+            // })
         }
     },
 
@@ -69,11 +85,23 @@ Page({
         let comments = wx.getStorageSync('comments');
         let username = wx.getStorageSync('userInfo');
         if (comments) {
-            that.setData({
-                comments: comments,
-                haveComment: true,
-                inputText: '',
-            })
+            // 如果有本条词条的评论
+            if (comments.some(item => item.heroId == options.heroId)) {
+                // 新建一个空的评论数组
+                let thisComments = [];
+                for (let i = 0; i < comments.length; i++) {
+                    if (comments[i].heroId == options.heroId) {
+                        thisComments.push(comments[i]);
+                    }
+                }
+
+                that.setData({
+                    comments: thisComments,
+                    haveComment: true,
+                    inputText: '',
+                })
+
+            }
         }
     },
 

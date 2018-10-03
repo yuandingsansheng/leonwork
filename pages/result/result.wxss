@@ -110,8 +110,12 @@ swiper-item {
     margin-bottom: 20rpx;
 }
 
-.like, .dislike, .comment, .related, .revise {
+.like, .comment, .related, .revise {
     width: 42rpx;
     height: 42rpx;
 }
 
+.dislike {
+    width: 44rpx;
+    height: 44rpx;
+}

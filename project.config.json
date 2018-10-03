@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 8,
+			"current": 10,
 			"list": [
 				{
 					"id": -1,
@@ -86,7 +86,19 @@
 				{
 					"id": -1,
 					"name": "我的消息",
-					"pathName": "pages/message/message"
+					"pathName": "pages/message/message",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的评论",
+					"pathName": "pages/mycomments/mycomments",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的评论详情",
+					"pathName": "pages/commentDetails/commentDetails"
 				}
 			]
 		}

@@ -1,0 +1,35 @@
+<view class='container'>
+    <!-- 结果匹配 -->
+    <view wx:if='{{have}}'>
+        <view class='area'>
+            <view wx:for='{{comments}}' wx:key='commes'>
+                <!-- 第一个评论 -->
+                <view wx:if='{{index == 0}}'>
+                    <view class='card first-card' bindtap='details' data-text='{{item.id}}'>
+                        <!-- 头像 -->
+                        <image src='https://www.styihm.com/system/image/{{item.id}}.jpg' class='icon'></image>
+                        <!-- 姓名 -->
+                        <text class='name'>{{item.name}}</text>
+                        <!-- 评论数量 -->
+                        <text class='number'>{{item.number}}条评论</text>
+                    </view>
+                </view>
+                <!-- 剩下的评论 -->
+                <view wx:else>
+                    <view class='card' bindtap='details' data-text='{{item.id}}'>
+                        <!-- 头像 -->
+                        <image src='https://www.styihm.com/system/image/{{item.id}}.jpg' class='icon'></image>
+                        <!-- 姓名 -->
+                        <text class='name'>{{item.name}}</text>
+                        <!-- 评论数量 -->
+                        <text class='number'>{{item.number}}条评论</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 没有结果出现提示消息 -->
+    <view wx:else>
+        <text class='tip' decode='{{true}}'>&emsp;您目前还没有评论过的词条呢</text>
+    </view>
+</view>

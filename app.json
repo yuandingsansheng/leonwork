@@ -12,6 +12,7 @@
         "pages/myhero/myhero",
         "pages/mylike/mylike",
         "pages/comment/comment",
+        "pages/commentDetails/commentDetails",
         "pages/logs/logs"
     ],
     "window": {

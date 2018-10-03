@@ -1,0 +1,24 @@
+<!-- container -->
+<view class='container'>
+    <!-- 内容区 -->
+        <view class='area'>
+            <view class='comment-area'>
+                <!-- title -->
+                <view class='title'>我的评论</view>
+                <view wx:for='{{comments}}' wx:key='comments'>
+                    <view class='card'>
+                        <!-- 姓名 -->
+                        <view class='username'>{{item.username}}</view>
+                        <!-- 评论内容 -->
+                        <view class='content'>
+                            <!-- 楼层 -->
+                            <text class='lou'>{{index+1}}楼</text>
+                            <!-- 内容 -->
+                            <text class='text'>{{item.content}}</text>
+                        </view>
+
+                    </view>
+                </view>
+            </view>
+        </view>
+</view>

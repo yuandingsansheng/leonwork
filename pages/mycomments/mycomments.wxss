@@ -1,0 +1,71 @@
+page {
+    font-size: 30rpx;
+    background: #fffff5;
+}
+
+.contaniner {
+    width: 750rpx;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* area */
+
+.area {
+    width: 700rpx;
+    margin: 20rpx 25rpx;
+    color: #6a6b71;
+    font-size: 32rpx;
+    box-shadow: 0 0 20rpx #f0f0f0;
+    border-radius: 10rpx;
+    position: absolute;
+}
+
+/* 单个词条 */
+
+.card {
+    width: 600rpx;
+    margin-left:  50rpx;
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+    display: flex;
+    border-top: 1rpx solid #f0f0f0;
+}
+
+.first-card {
+    border: none;
+}
+
+/* 头像 */
+
+.icon {
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+}
+
+/* 名字 */
+
+.name {
+    color: #cc9b47;
+}
+
+/* 次数 */
+
+.number {
+    position: absolute;
+    left: 520rpx;
+}
+
+
+.tip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    color: #c0c0c0;
+}
+
