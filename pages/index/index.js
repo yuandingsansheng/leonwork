@@ -247,7 +247,7 @@ Page({
         if (choseText != '不限' && input.indexOf(choseText) == -1) {
             input = choseText;
         } else {
-            input = '';
+            input = '*';
         }
         that.setData({
             cInitial: input,
@@ -264,7 +264,7 @@ Page({
         if (choseText != '不限' && input.indexOf(choseText) == -1) {
             input = choseText;
         } else {
-            input = '';
+            input = '*';
         }
         that.setData({
             cForce: input,
@@ -281,7 +281,7 @@ Page({
         if (choseText != '不限' && input.indexOf(choseText) == -1) {
             input = choseText;
         } else {
-            input = '';
+            input = '*';
         }
         that.setData({
             cBplace: input,
@@ -298,7 +298,7 @@ Page({
         if (choseText != '不限' && input.indexOf(choseText) == -1) {
             input = choseText;
         } else {
-            input = '';
+            input = '*';
         }
         that.setData({
             cGender: input,

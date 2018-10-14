@@ -57,7 +57,7 @@ page {
 .username {
     font-size: 25rpx;
     margin-top: 20rpx;
-    color: #cc9b47;
+    color: #ffd553;
 }
 
 /* 评论内容 */

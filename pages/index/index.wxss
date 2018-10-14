@@ -94,7 +94,7 @@ page {
     justify-content: center;
     height: 50rpx;
     width: 750rpx;
-    color: #cc9b47;
+    color: #ffcc2f;
     border-bottom: 1px solid #c0c0c0;
     padding-bottom: 20rpx;
     font-size: 36rpx;
@@ -108,7 +108,7 @@ page {
 .line {
     width: 70rpx;
     height: 4rpx;
-    background: #cc9b47;
+    background: #ffcc2f;
 }
 
 .row {
@@ -123,7 +123,7 @@ page {
 .number {
     margin-left: 60rpx;
     font-size: 36rpx;
-    color: #cc9b47;
+    color: #ffcc2f;
 }
 
 .name {
@@ -215,7 +215,10 @@ page {
     width: 200rpx;
     margin-left: 225rpx;
     font-size: 28rpx;
-    background: #cc9b47;
-    box-shadow: 0 0 5rpx rgba(81, 81, 81, 1);
+    border-radius: 25rpx;
+    border: 1rpx solid #ffcc2f;
+    background: #fffff5;
+    /* box-shadow: 0 0 10rpx #ffcc2f; */
     margin-bottom: 30rpx;
+    color: #ffcc2f;
 }

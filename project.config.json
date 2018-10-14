@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 10,
+			"current": 11,
 			"list": [
 				{
 					"id": -1,
@@ -98,7 +98,13 @@
 				{
 					"id": -1,
 					"name": "我的评论详情",
-					"pathName": "pages/commentDetails/commentDetails"
+					"pathName": "pages/commentDetails/commentDetails",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的性格英雄提示页面",
+					"pathName": "pages/myhero/myhero"
 				}
 			]
 		}

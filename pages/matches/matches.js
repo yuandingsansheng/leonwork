@@ -15,6 +15,7 @@ Page({
     preciseChose: function(e) {
         app.preciseSearch(e.currentTarget.id, function(res) {
             let preciseData = JSON.stringify(res.data.data);
+            console.log(res.data.data)
             wx.setStorageSync('preciseData', preciseData)
             wx.navigateTo({
                 url: '../result/result'
@@ -63,7 +64,6 @@ Page({
         }
         that.setData({
             matches: JSON.parse(options.data),
-            inputText: options.inputText
         })
 
     },

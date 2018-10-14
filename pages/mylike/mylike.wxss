@@ -10,15 +10,18 @@ page {
     padding: 0;
     overflow: hidden;
 }
+
 .matches {
     margin-bottom: 50rpx;
     width: 700rpx;
     height: 300rpx;
     margin-left: 25rpx;
-    background: rgb(219, 241, 252);
-    overflow: scroll;
+    background-image: url('https://wx2.sinaimg.cn/mw690/006oQknOgy1fvxs0juj1fj30kk08xa9x.jpg');
+    background-size: 100% 100%;
+    /* background: rgb(219, 241, 252);
     background: linear-gradient(to left bottom, transparent 50%, rgba(0, 0, 0, 0.4) 0) no-repeat 100% 0 / 2em 2em,
-                linear-gradient(-135deg, transparent 1.5em, rgb(219, 241, 252) 0);
+                linear-gradient(-135deg, transparent 1.5em, rgb(219, 241, 252) 0); */
+    overflow: scroll;
 }
 
 .name-area, .describe {
@@ -40,7 +43,7 @@ page {
 }
 
 .msg {
-    font-size: 21rpx;
+    font-size: 30rpx;
     margin-right: 30rpx;
     color: #999;
 }
@@ -56,7 +59,7 @@ page {
 }
 
 .des {
-    font-size: 21rpx;
+    font-size: 28rpx;
     color: #999;
 }
 
@@ -64,7 +67,18 @@ page {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
+    margin: 40rpx auto;
     color: #c0c0c0;
 }
 
+/* icon */
+
+.icon {
+    display: flex;
+    margin-top: 200rpx;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    width: 200rpx;
+    height: 160rpx;
+}

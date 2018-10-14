@@ -38,13 +38,14 @@ Page({
                 lastComments.push(newComment);
                 wx.setStorageSync('comments', lastComments);
             }
-            // 如果又本条词条的评论
+            // 如果有本条词条的评论
 
             // 新建一个空的评论数组
             let thisComments = [];
-            for (let i = 0; i < lastComments.length; i++) {
-                if (lastComments[i].heroId == that.data.heroId) {
-                    thisComments.push(lastComments[i]);
+            let last = wx.getStorageSync('comments');
+            for (let i = 0; i < last.length; i++) {
+                if (last[i].heroId == that.data.heroId) {
+                    thisComments.push(last[i]);
                 }
             }
 

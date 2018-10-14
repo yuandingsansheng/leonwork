@@ -10,42 +10,80 @@ page {
     background-color: #fffff5;
 }
 
+/* 进度条 */
+
 .progress {
-    position: relative;
-    top: 40rpx;
-    height: 10%;
+    position: absolute;
+    top: 60rpx;
+    width: 750rpx;
 }
+
+.out {
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 600rpx;
+    height: 5px;
+    background-color: #ff0;
+}
+
+.out::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    display: block;
+    position: absolute;
+    top: -5rpx;
+    left: 65rpx;
+    background: #8a2424;
+    transform: rotateZ(45deg);
+}
+
+.out::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    display: block;
+    position: absolute;
+    top: -5rpx;
+    right: 65rpx;
+    background: #8a2424;
+    transform: rotateZ(45deg);
+}
+
+.in {
+    height: 5px;
+    background-color: #8a2424;
+    position: absolute;
+    top: 0rpx;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* 进度 */
+
+.jindu {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: -10rpx;
+    transition: 0.3s;
+}
+
+
+/* 问题 */
 
 .question-area {
     width: 80%;
     height: 80%;
-    position: relative;
+    position: absolute;
     left: 10%;
+    top: 120rpx;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-image: url("https://wx4.sinaimg.cn/mw690/006oQknOgy1fukxa2bsnhj30ge0jc3z8.jpg");
     background-size: 600rpx 940rpx;
     background-repeat: no-repeat;
-}
-
-.out {
-    margin-top: 15rpx;
-    margin-left: 10%;
-    margin-right: 10%;
-    width: 80%;
-    height: 10px;
-    border: 1px solid rgb(71, 71, 71);
-    border-radius: 10px;
-    overflow: hidden;
-    background-color: #fcfcfc;
-}
-
-.in {
-    height: 100%;
-    background-color: #FFE4E1;
-    border-radius: 10px;
-    transition: 0.3s;
 }
 
 .page-hd {
@@ -69,7 +107,7 @@ button {
     margin-top: 50rpx;
     text-align: center;
     background-image: url('https://wx2.sinaimg.cn/mw690/006oQknOgy1fvraaohnaaj30eg02s0lw.jpg');
-    background-size: 100% 100% ;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;

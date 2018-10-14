@@ -40,7 +40,7 @@ page {
 
 /* 头像 */
 
-.icon {
+.avt {
     width: 40rpx;
     height: 40rpx;
     border-radius: 50%;
@@ -65,7 +65,18 @@ page {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
+    margin: 40rpx auto;
     color: #c0c0c0;
 }
 
+/* icon */
+
+.icon {
+    display: flex;
+    margin-top: 200rpx;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    width: 200rpx;
+    height: 160rpx;
+}

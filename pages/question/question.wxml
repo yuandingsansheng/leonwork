@@ -2,7 +2,9 @@
 <view class='container'>
     <view class='progress'>
         <view class='out'>
-            <view class='in' style='width:{{progressWidth}}%'></view>
+            <view class='in' style='width:{{progressWidth}}rpx'>
+                <image src='../../images/进度钮.png' class='jindu' style='left:{{progressWidth-2}}rpx'></image>
+            </view>
         </view>
     </view>
     <view class='question-area'>

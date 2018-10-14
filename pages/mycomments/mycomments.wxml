@@ -7,7 +7,7 @@
                 <view wx:if='{{index == 0}}'>
                     <view class='card first-card' bindtap='details' data-text='{{item.id}}'>
                         <!-- 头像 -->
-                        <image src='https://www.styihm.com/system/image/{{item.id}}.jpg' class='icon'></image>
+                        <image src='https://www.styihm.com/system/image/{{item.id}}.jpg' class='avt'></image>
                         <!-- 姓名 -->
                         <text class='name'>{{item.name}}</text>
                         <!-- 评论数量 -->
@@ -18,7 +18,7 @@
                 <view wx:else>
                     <view class='card' bindtap='details' data-text='{{item.id}}'>
                         <!-- 头像 -->
-                        <image src='https://www.styihm.com/system/image/{{item.id}}.jpg' class='icon'></image>
+                        <image src='https://www.styihm.com/system/image/{{item.id}}.jpg' class='avt'></image>
                         <!-- 姓名 -->
                         <text class='name'>{{item.name}}</text>
                         <!-- 评论数量 -->
@@ -30,6 +30,7 @@
     </view>
     <!-- 没有结果出现提示消息 -->
     <view wx:else>
+        <image src='../../images/没有订单.png' class='icon'></image>
         <text class='tip' decode='{{true}}'>&emsp;您目前还没有评论过的词条呢</text>
     </view>
 </view>

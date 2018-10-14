@@ -66,20 +66,22 @@ page {
 .swiper-tab-list {
     width: 150rpx;
     text-align: center;
-    background: #e9deca;
+    background: #fffff5;
+    color: #ffcc2f;
     border-radius: 10rpx;
+    border: 1rpx solid #ffcc2f;
     display: inline-block;
 }
 
 /* 选中 */
 .on {
-  color: #cc9b47;
+  color: #8a2424;
+  border-color: #8a2424;
 }
 
 .swiper-area {
     width: 660rpx;
     height: calc(96vh - 362rpx);
-
 }
 
 swiper-item {

@@ -23,8 +23,8 @@
 <view class='container'>
     <view class='result-box'>
         <view class='title'>三国群雄，我是</view>
-        <view class='name' bindtap='findMore' data-text='{{name}}'>{{name}}</view>
-        <text class='tip'>（点击{{name}}查看的更多信息)</text>
+        <view class='name'>{{name}}</view>
+        <text class='tip' bindtap='findMore' data-text='{{name}}'>（点击{{name}}查看的更多信息)</text>
         <view class='describe'>{{describe}}</view>
     </view>
     <view class='goal-box'>

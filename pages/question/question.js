@@ -4,7 +4,7 @@ const app = getApp()
 Page({
     //数据绑定
     data: {
-        progressWidth: 0,   //进度条宽度
+        progressWidth: 40,   //进度条宽度
         index: 0,   //计数下标
         realIndex: 0,   //产生的随机下标
         optionA: "A",
@@ -45,7 +45,7 @@ Page({
             property1: this.data.property1 + app.globalData.question[this.data.realIndex].option.A.weight[0],
             property2: this.data.property2 + app.globalData.question[this.data.realIndex].option.A.weight[1],
             property3: this.data.property3 + app.globalData.question[this.data.realIndex].option.A.weight[2],
-            progressWidth: this.data.progressWidth + 10,
+            progressWidth: this.data.progressWidth + 60,
         });
         
         if (this.data.index < app.globalData.question.length - 1) {
@@ -61,6 +61,15 @@ Page({
                 answerC: app.globalData.question[this.data.realIndex].option.C.content,
             })
         } else {
+            // 把选项存入本地
+            let options = {
+                'A': this.data.property1,
+                'B': this.data.property2,
+                'C': this.data.property3
+            }
+            wx.setStorageSync('options', options);
+
+            // 跳转到结果页
             wx.redirectTo({
                 url: '/pages/final/final?A=' + this.data.property1 + '&B=' + this.data.property2 + '&C=' + this.data.property3,
             })
@@ -72,7 +81,7 @@ Page({
             property1: this.data.property1 + app.globalData.question[this.data.realIndex].option.B.weight[0],
             property2: this.data.property2 + app.globalData.question[this.data.realIndex].option.B.weight[1],
             property3: this.data.property3 + app.globalData.question[this.data.realIndex].option.B.weight[2],
-            progressWidth: this.data.progressWidth + 10,
+            progressWidth: this.data.progressWidth + 60,
         })
         
         if (this.data.index < app.globalData.question.length - 1) {
@@ -100,7 +109,7 @@ Page({
             property1: this.data.property1 + app.globalData.question[this.data.realIndex].option.C.weight[0],
             property2: this.data.property2 + app.globalData.question[this.data.realIndex].option.C.weight[1],
             property3: this.data.property3 + app.globalData.question[this.data.realIndex].option.C.weight[2],
-            progressWidth: this.data.progressWidth + 10,
+            progressWidth: this.data.progressWidth + 60,
         })
         
         if (this.data.index < app.globalData.question.length - 1) {

@@ -55,6 +55,12 @@ page {
     border-right: 1px solid #ededed;
 }
 
+/* content */
+
+.content {
+    color: #ffcc2f;
+}
+
 /* icon */
 
 .icon {
@@ -71,7 +77,6 @@ page {
 
 .border-box {
     width: 700rpx;
-    /* height: calc(100vh - 450rpx); */
     box-shadow: 0 0 20rpx #f0f0f0;
     border-radius: 20rpx;
 }

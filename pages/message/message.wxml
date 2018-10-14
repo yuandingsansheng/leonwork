@@ -20,13 +20,13 @@
                         <!-- 日期 -->
                         <text class='date'>{{date}}</text>
                     </view>
-
                 </view>
             </view>
         </view>
     </view>
     <!-- 没有消息 -->
     <view wx:else>
+        <image src='../../images/没有订单.png' class='icon'></image>
         <text class='tip'>空空如也哦</text>
     </view>
 </view>

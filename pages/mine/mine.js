@@ -9,8 +9,8 @@ Page({
         hasUserInfo: false,
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
 
-        dayNumber: '', // 签到天数
-        active: '', // 活跃度
+        dayNumber: 0, // 签到天数
+        active: 0, // 活跃度
         isQd: false, // 今天是否签到
         isTip: false, // 签到提示
         isjifen: false, // 是否已经计分
@@ -55,7 +55,7 @@ Page({
             // 设置活跃度
             wx.setStorageSync('huoyuedu', 10);
             that.setData({
-                isjifen: true
+                isjifen: true,
             })
 
 
@@ -65,22 +65,22 @@ Page({
             let currentSignData = {
                 'lastSignDate': currentDate,
                 'lastSignDay': currentDay,
-                'totalDay': '1',
-                'continuousDay': '1',
+                'totalDay': 1,
+                'continuousDay': 1,
             }
             // 如果是1号
             if (currentDate == 1) {
                 // 连续
-                if (signData.lastSignDate - currentDate >= 29 && (currentDay - signData.lastSignDay == 1 || currentDay - signData.lastSignDay == -6)) {
+                if ((currentDay - signData.lastSignDay == 1) || (currentDay - signData.lastSignDay == -6 && signData.lastSignDate - currentDate >= 29)) {
                     currentSignData.totalDate = signData.totalDate + 1;
-                    currentSignData.continuousDate = signData.continuousDate + 1;
+                    currentSignData.continuousDay = signData.continuousDay + 1;
                     wx.setStorageSync('lastSignData', currentSignData);
                     that.setData({
                         isQd: true,
                     });
                     if (!that.data.isjifen) {
                         // 活跃度
-                        jifen += currentSignData.continuousDate * 10;
+                        jifen += currentSignData.continuousDay * 10;
                         that.setData({
                             isjifen: true
                         })
@@ -102,14 +102,14 @@ Page({
                 // 连续
                 if (currentDate - signData.lastSignDate == 1) {
                     currentSignData.totalDate = signData.totalDate + 1;
-                    currentSignData.continuousDate = signData.continuousDate + 1;
+                    currentSignData.continuousDay = signData.continuousDay + 1;
                     wx.setStorageSync('lastSignData', currentSignData);
                     that.setData({
                         isQd: true,
                     });
                     if (!that.data.isjifen) {
                         // 活跃度
-                        jifen += currentSignData.continuousDate * 10;
+                        jifen += currentSignData.continuousDay * 10;
                         that.setData({
                             isjifen: true
                         })
@@ -146,6 +146,8 @@ Page({
                 })
             }
         }
+
+
         that.setData({
             dayNumber: wx.getStorageSync('lastSignData').continuousDay,
             active: wx.getStorageSync('huoyuedu')
@@ -194,9 +196,16 @@ Page({
 
     // 导航到我的性格英雄
     navToMyhero: function() {
-        wx.navigateTo({
-            url: '../myhero/myhero',
-        })
+        let options = wx.getStorageSync('options');
+        if (options) {
+            wx.navigateTo({
+                url: '../final/final?A=' + options.A + '&B=' + options.B + '&C=' + options.C,
+            })
+        } else {
+            wx.navigateTo({
+                url: '../myhero/myhero',
+            })
+        }
     },
 
     /**
@@ -236,7 +245,7 @@ Page({
 
         if (!signData) { // 从未签到
             that.setData({
-                dayNumber: '0',
+                dayNumber: 0,
             })
         } else {
             let today = new Date().getDate();
@@ -270,11 +279,11 @@ Page({
             wx.setStorageSync('huoyuedu', 0)
             if (!that.data.isQd) {
                 that.setData({
-                    active: '0',
+                    active: 0,
                 })
             } else {
                 that.setData({
-                    active: '10',
+                    active: 10,
                     isjifen: true
                 });
                 wx.setStorageSync('huoyuedu', 10)

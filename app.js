@@ -13,11 +13,19 @@ App({
         wx.login({
             success: res => {
                 // 发送 res.code 到后台换取 openId, sessionKey, unionId
+                console.log(res.code);
+                wx.request({
+                    url: 'https://www.styihm.com/hero/api/wx/login' + res.code,
+                    method: 'POST',
+                    success: function(res) {
+                        console.log(res);
+                    }
+                })
             }
         })
 
         wx.setTabBarStyle({
-            selectedColor: '#cc9b47'
+            selectedColor: '#fdc44b'
         })
     },
 

@@ -20,7 +20,7 @@
     <!--content-->
     <!--使用animation属性指定需要执行的动画-->
     <view animation='{{animationData}}' class='drawr-box' wx:if='{{showModalStatus}}'>
-        <view class="drawer-title">条件查询</view>
+        <view class="drawer-title">筛选</view>
         <view class="drawer-content">
             <view class='Initials'>
                 <view class='title'>首字字母</view>
@@ -28,7 +28,7 @@
                     <view wx:for='{{Initials}}' wx:for-item='letter' wx:key='Initials'>
                         <view id='{{index}}' bindtap='chooseInitials'>
                             <view wx:if='{{index == clickInitialId}}'>
-                                <view class='item' data-text='{{letter}}' style='background:#cc9b47'>{{letter}}</view>
+                                <view class='item' data-text='{{letter}}' style='background:#ffcc2f'>{{letter}}</view>
                             </view>
                             <view wx:else>
                                 <view class='item' data-text='{{letter}}'>{{letter}}</view>
@@ -43,7 +43,7 @@
                     <view wx:for='{{forceGroup}}' wx:key='forceGroup'>
                         <view id='{{index}}' bindtap='chooseForceGroup'>
                             <view wx:if='{{index == clickForceId}}'>
-                                <view class='item' data-text='{{item}}' style='background:#cc9b47'>{{item}}</view>
+                                <view class='item' data-text='{{item}}' style='background:#ffcc2f'>{{item}}</view>
                             </view>
                             <view wx:else>
                                 <view class='item' data-text='{{item}}'>{{item}}</view>
@@ -58,7 +58,7 @@
                     <view wx:for='{{birthplace}}' wx:key='birthplace'>
                         <view id='{{index}}' bindtap='chooseBirthPlace'>
                             <view wx:if='{{index == clcikBId}}'>
-                                <view class='item' data-text='{{item}}' style='background:#cc9b47'>{{item}}</view>
+                                <view class='item' data-text='{{item}}' style='background:#ffcc2f'>{{item}}</view>
                             </view>
                             <view wx:else>
                                 <view class='item' data-text='{{item}}'>{{item}}</view>
@@ -73,7 +73,7 @@
                     <view wx:for='{{gender}}' wx:key='gender'>
                         <view id='{{index}}' bindtap='chooseGender'>
                             <view wx:if='{{index == clickGenderId}}'>
-                                <view class='item' data-text='{{item}}' style='background:#cc9b47'>{{item}}</view>
+                                <view class='item' data-text='{{item}}' style='background:#ffcc2f'>{{item}}</view>
                             </view>
                             <view wx:else>
                                 <view class='item' data-text='{{item}}'>{{item}}</view>

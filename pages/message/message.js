@@ -4,7 +4,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        havemessage: false, // 有消息
+        havemessage: true, // 有消息
         message: [{
             'heroName': '刘备'
         }, {

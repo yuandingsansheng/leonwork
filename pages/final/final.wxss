@@ -163,6 +163,7 @@ page {
 
 .tip {
     font-size: 24rpx;
+    color: #cc9b47;
     font-weight: 400;
 }
 
